@@ -1,0 +1,224 @@
+
+$font-family: "Poppins", sans-serif;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-background-light: #F2F0F1;
+$color-background-dark: #000000;
+$color-text-light: #F0EEED;
+$color-text-dark: #000000;
+$color-opacity-dark: rgba($color-black, 0.6);
+$color-opacity-light: rgba($color-black, 0.3);
+
+$hero-padding: 8% 7.7%;
+$button-padding: 3% 12%;
+$border-radius: 3.9em;
+$transition-time: 0.2s;
+$grid-gap: 20px;
+$card-width: 295px;
+$card-height: 298px;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .hero {
+    position: relative;
+    padding: auto;
+    background-color: $color-background-light;
+    background-image: url('../../assets/images/main-photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+
+    .main-photo {
+      width: 100%;
+      height: auto;
+      float: right;
+    }
+
+    .img {
+      .little-star {
+        position: absolute;
+      }
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      top: 0;
+      left: 0;
+      padding: $hero-padding;
+
+      .hero-information {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        h1 {
+          font-family: $font-family;
+          color: $color-text-dark;
+          font-size: 4em;
+          font-weight: bold;
+          line-height: 1em;
+          margin-bottom: 0.5em;
+
+          .span1 {
+            text-decoration: underline;
+          }
+        }
+
+        p {
+          color: $color-text-dark;
+          opacity: 0.6;
+          font-size: 1em;
+          font-weight: normal;
+          line-height: 1.5em;
+          margin-bottom: 2em;
+        }
+
+        button {
+          background-color: $color-black;
+          color: $color-white;
+          font-size: 1em;
+          font-weight: 500;
+          line-height: auto;
+          padding: $button-padding;
+          border: none;
+          border-radius: $border-radius;
+          margin-bottom: 3em;
+          width: 250px;
+          cursor: pointer;
+          transition: background-color $transition-time;
+
+          &:hover {
+            background-color: darken($color-black, 10%);
+          }
+        }
+
+        ul {
+          list-style-type: none;
+          display: flex;
+          padding: 0;
+          margin: 0;
+          align-items: center;
+
+          li {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+
+            h4 {
+              color: $color-text-dark;
+              font-size: 2.5em;
+              font-weight: bold;
+              line-height: auto;
+              margin-bottom: -2px;
+            }
+
+            p {
+              font-size: 1em;
+              font-weight: normal;
+              line-height: 22px;
+              color: $color-text-dark;
+              opacity: 0.6;
+            }
+          }
+
+          hr {
+            height: 4em;
+            width: 1px;
+            margin-right: 2em;
+            margin-left: 2em;
+            background-color: $color-text-dark;
+            opacity: 0.3;
+          }
+        }
+      }
+
+      .stars {
+        width: 50%;
+
+        .star {
+          margin-left: 600px;
+          margin-top: -80px;
+        }
+      }
+    }
+
+    .brands {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 42px 100px;
+      background-color: $color-black;
+      margin-top: -4px;
+    }
+  }
+
+  .categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 48px;
+      margin: 66px 0 48px;
+      color: $color-text-dark;
+      font-weight: bold;
+      font-family: $font-family;
+      line-height: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: $grid-gap;
+      width: auto;
+    }
+
+    .card {
+      width: $card-width;
+      height: $card-height;
+      background-color: $color-text-light;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform $transition-time;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .card-content {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 4px;
+        overflow-wrap: break-word;
+        text-align: start;
+      }
+
+      .content {
+        font-size: 64px;
+        font-weight: bold;
+        cursor: pointer;
+        color: $color-text-dark;
+      }
+    }
+  }
+}
